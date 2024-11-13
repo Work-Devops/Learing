@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression Suite">
+    <!-- Define a test named "Cucumber Tests" -->
+    <test name="Cucumber Tests">
+        <!-- List of classes to execute -->
+        <classes>
+            <!-- Specify the fully-qualified name of the TestRunner class -->
+            <class name="Runners.TestRunner"/>
+        </classes>
+    </test>
+</suite>
