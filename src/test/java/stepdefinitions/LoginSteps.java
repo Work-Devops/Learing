@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import utils.WebDriverFactory;
 
 public class LoginSteps {
@@ -37,6 +36,6 @@ public class LoginSteps {
     }
     @After
     public void tearDown() {
-        WebDriverFactory.quitDriver(); // Clean up and quit the WebDriver session
+        WebDriverFactory.quitDriver(); 
     }
 }
