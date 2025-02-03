@@ -1,8 +1,7 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Selenium BDD Suite">
-    <test name="CucumberTests">
+<suite name="MyTestSuite">
+    <test name="MyTest">
         <classes>
-            <class name="TestRunner.TestNGTestRunner" />
+            <class name="TestRunner.ggggff" />
         </classes>
     </test>
 </suite>

@@ -5,7 +5,7 @@
         <!-- List of classes to execute -->
         <classes>
             <!-- Specify the fully-qualified name of the TestRunner class -->
-            <class name="Runners.TestRunner"/>
+            <class name="TestRunner.TestRunner"/>
         </classes>
     </test>
 </suite>
