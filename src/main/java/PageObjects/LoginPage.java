@@ -66,6 +66,6 @@ public class LoginPage {
         system.out.println ("This is final code i commit if the code is working marked as success");
                 system.out.println ("This is final code i commit if the code is working marked as success");
 
-
+//we will write the code to call the method 
     }
 }
