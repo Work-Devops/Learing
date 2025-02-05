@@ -150,6 +150,7 @@ public class Prequal {
     // Method to Give Consent for Borrower
     public void consentBorrower() {
         clickButton(borrowerConsentField);
+        System.out.printrln ("Test the feature");
     }
 
     // Method to Authorize Co-Borrower
