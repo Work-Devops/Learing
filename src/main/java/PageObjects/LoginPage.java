@@ -52,10 +52,13 @@ public class LoginPage {
     // Getters for the WebElements
     public WebElement getUsernameField() {
         return driver.findElement(usernameField);
+        system.out.println("this is my commit ")
     }
 
     public WebElement getPasswordField() {
         return driver.findElement(passwordField);
+        system.out.println("this is my commit git")
+
     }
 
     public WebElement getLoginButton() {
