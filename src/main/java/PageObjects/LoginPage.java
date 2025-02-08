@@ -69,6 +69,7 @@ public class LoginPage {
                 system.out.println ("This is final code i commit if the code is working marked as success");
 
                 // final code to check the value
+<<<<<<< HEAD
                                 // final code to check the value
 
                 // final code to check the value
@@ -89,6 +90,8 @@ public class LoginPage {
                 // final code to check the value
 
 
+=======
+>>>>>>> bugfix
 
 
     }
