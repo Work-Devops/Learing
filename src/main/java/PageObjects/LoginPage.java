@@ -40,6 +40,7 @@ Stashed changes
         // Wait until the username field is clickable
         waitForElementToBeClickable(usernameElem);
         usernameElem.sendKeys(username);
+        // Wait until the username field is clickable
 
          
     }
