@@ -14,10 +14,12 @@ public class LoginPage {
     private By usernameField = By.cssSelector("input[type='text']");
     private By passwordField = By.cssSelector("input[type='password']");
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
-<<<<<<< Updated upstream
+ Updated upstream
         private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
-=======
+
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+
+    ß
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
@@ -25,7 +27,7 @@ public class LoginPage {
 
 
 
->>>>>>> Stashed changes
+Stashed changes
 
       
     public LoginPage(WebDriver driver) {
@@ -38,6 +40,8 @@ public class LoginPage {
         // Wait until the username field is clickable
         waitForElementToBeClickable(usernameElem);
         usernameElem.sendKeys(username);
+
+         
     }
 
     // Method to enter password
