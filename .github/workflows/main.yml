@@ -1,0 +1,41 @@
+name: Selenium CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Runs when pushing to the main branch
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Runner environment
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Fetch the latest code
+
+      - name: Set Up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'  # Temurin is a recommended OpenJDK distribution
+          java-version: '11'
+
+      - name: Cache Maven Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Run Tests with Maven
+        run: mvn clean test
+
+      - name: Upload Test Reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test Reports
+          path: target/surefire-reports
