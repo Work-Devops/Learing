@@ -3,7 +3,7 @@ name: Selenium CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Runs when pushing to the main branch
+      - main  # Runs on push to main branch
   pull_request:
     branches:
       - main
@@ -19,7 +19,7 @@ jobs:
       - name: Set Up Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'  # Temurin is a recommended OpenJDK distribution
+          distribution: 'temurin'
           java-version: '11'
 
       - name: Cache Maven Dependencies
@@ -30,12 +30,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
       - name: Run Tests with Maven
         run: mvn clean test
 
       - name: Upload Test Reports
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # ✅ Updated to v4
         with:
           name: Test Reports
           path: target/surefire-reports
