@@ -1,43 +1,16 @@
-name: Run BDD Tests & Deploy to AWS
+name :  My first github Action
 
 on:
-  push:
-    branches:
-      - main  # Runs when code is pushed to main branch
-
+ push:
+   branches:
+    - main
 jobs:
-  ui-tests:
-    runs-on: ubuntu-latest
+ my_first_job:
+   runs-on :"ubuntu-latest"
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - name: checked code
+        uses:  action/checkout@v4
 
-      - name: Set Up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '11'
-
-      - name: Install Chrome & Driver
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-          CHROME_VERSION=$(google-chrome --version | cut -d " " -f 3)
-          curl -sS -o chromedriver.zip https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip
-          unzip chromedriver.zip
-          sudo mv chromedriver /usr/local/bin/
-          chromedriver --version
-
-      - name: Run BDD Cucumber TestNG Tests
-        run: mvn clean test -Dcucumber.options="--tags @Regression"
-
-  deploy:
-    needs: ui-tests   # ✅ Wait for tests to complete first!
-    if: success()      # ✅ Only deploy if tests pass
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to AWS
-        run: |
-          aws codepipeline start-pipeline-execution --name MyPipeline
+      -name: print a message
+       run: echo "Hi this is my 1st pipleine"
