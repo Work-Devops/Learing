@@ -1,16 +1,17 @@
-name :  My first github Action
+name: My First GitHub Action  # Correct spacing and format
 
 on:
- push:
-   branches:
-    - main
+  push:
+    branches:
+      - main  # Proper indentation
+
 jobs:
- my_first_job:
-   runs-on :"ubuntu-latest"
+  my_first_job:
+    runs-on: ubuntu-latest  # Removed extra colon and space
 
     steps:
-      - name: checked code
-        uses:  action/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4  # Fixed "actions" spelling
 
-      -name: print a message
-       run: echo "Hi this is my 1st pipleine"
+      - name: Print a Message  # Corrected space after "- name"
+        run: echo "Hi, this is my 1st pipeline!"
