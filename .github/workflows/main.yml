@@ -1,46 +1,16 @@
-name: Selenium CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main  # Runs on push to main branch
-  pull_request:
-    branches:
-      - main
-
+name: Code build and review 
+on: push 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest  # Runner environment
-    
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4  # Fetch the latest code
-
-      - name: Set Up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '11'
-
-      - name: Cache Maven Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-
-      - name: Install Google Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-      - name: Run Tests with Maven
-        run: mvn clean test
-
-      - name: Upload Test Reports
-        if: always()
-        uses: actions/upload-artifact@v4  # ✅ Updated to v4
-        with:
-          name: Test Reports
-          path: target/surefire-reports
+ buildjob:
+  runs-on: ubuntu-latest
+  steps:
+  - name: Clone the current repository on the runner
+    uses: actions/checkout@v4
+  - name: Setup Java 17 and maven 
+    uses: actions/setup-java@v4
+    with:
+     distribution: 'temurin'
+     java-version: '17'
+     cache: 'maven'
+  - name: Build the code 
+    run: mvn package
