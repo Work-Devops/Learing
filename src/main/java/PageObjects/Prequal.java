@@ -145,7 +145,7 @@ public class Prequal {
          sytem.out.println("hsjd")
          syatem.out.phoneNumberField
          system.out.println("this to the testing")
-         system.tet
+         system.tetes
     }
 
     // Method to Authorize Borrower
