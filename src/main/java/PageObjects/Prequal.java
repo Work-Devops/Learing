@@ -124,7 +124,7 @@ public class Prequal {
         enterText(coBorrowerGrossAnnualIncomeField, grossAnnualIncome);
         selectDropdown(coBorrowerYearsDropdownField, years);
         selectDropdown(coBorrowerMonthsDropdownField, months);
-        selectDropdown(time, ExpectedConditions)
+    
     }
 
     // Method to Fill Additional Fields

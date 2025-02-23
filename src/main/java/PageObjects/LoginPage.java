@@ -14,12 +14,11 @@ public class LoginPage {
     private By usernameField = By.cssSelector("input[type='text']");
     private By passwordField = By.cssSelector("input[type='password']");
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
- Updated upstream
-        private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+    private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
 
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
 
-    ß
+    
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
@@ -27,7 +26,6 @@ public class LoginPage {
 
 
 
-Stashed changes
 
       
     public LoginPage(WebDriver driver) {
@@ -70,45 +68,16 @@ Stashed changes
     // Getters for the WebElements
     public WebElement getUsernameField() {
         return driver.findElement(usernameField);
-        system.out.println("this is my commit ")
+        
     }
 
     public WebElement getPasswordField() {
         return driver.findElement(passwordField);
-        system.out.println("this is my commit git")
 
     }
 
     public WebElement getLoginButton() {
         return driver.findElement(loginButton);
-        system.out.println ("This is final code i commit if the code is working marked as success");
-                system.out.println ("This is final code i commit if the code is working marked as success");
-
-                // final code to check the value
-<<<<<<< HEAD
-                                // final code to check the value
-
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-                // final code to check the value
-
-
-=======
->>>>>>> bugfix
-
 
     }
 }
