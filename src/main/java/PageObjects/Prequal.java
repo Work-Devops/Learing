@@ -140,6 +140,7 @@ public class Prequal {
     // Method to Click Submit Button
     public void clickSubmit() {
         clickButton(submitButton);
+        System.out.println("this is the code")
     }
 
     // Method to Authorize Borrower
