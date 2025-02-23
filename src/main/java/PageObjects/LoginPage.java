@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 package PageObjects;
 
 import java.time.Duration;
@@ -14,7 +16,18 @@ public class LoginPage {
     private By usernameField = By.cssSelector("input[type='text']");
     private By passwordField = By.cssSelector("input[type='password']");
     private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
-        private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+    private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+
+    private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+
+    
+    private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+    private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+    private By loginButton = By.xpath("//*[@id='root']/div[2]/div/div/div/form/div[5]/button");
+
+
+
+
 
       
     public LoginPage(WebDriver driver) {
@@ -27,6 +40,9 @@ public class LoginPage {
         // Wait until the username field is clickable
         waitForElementToBeClickable(usernameElem);
         usernameElem.sendKeys(username);
+        // Wait until the username field is clickable
+
+         
     }
 
     // Method to enter password
@@ -54,22 +70,17 @@ public class LoginPage {
     // Getters for the WebElements
     public WebElement getUsernameField() {
         return driver.findElement(usernameField);
-        system.out.println("this is my commit ")
+        
     }
 
     public WebElement getPasswordField() {
         return driver.findElement(passwordField);
-        system.out.println("this is my commit git")
 
     }
 
     public WebElement getLoginButton() {
         return driver.findElement(loginButton);
-        system.out.println ("This is final code i commit if the code is working marked as success");
-                system.out.println ("This is final code i commit if the code is working marked as success");
-
-                // final code to check the value
-
 
     }
 }
+>>>>>>> 922b2ba (this has some changes)
