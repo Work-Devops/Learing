@@ -146,6 +146,7 @@ public class Prequal {
     // Method to Authorize Borrower
     public void authorizeBorrower() {
         clickButton(authorizationField);
+        system.out.println ("thius is the code ")
     }
 
     // Method to Give Consent for Borrower
