@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Use Secret in a Command
-        run: echo "this is the value ${{TESTING_REPORT}}"
+        run: echo "The secret value is ${{ secrets.TESTING_REPORT }}"  # Never print secrets in real workflows!
