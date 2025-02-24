@@ -1,28 +1,17 @@
-name: Code Build and Review 
+name: My First GitHub Action  # Name of the workflow
 
-on: push 
+on:
+  push:
+    branches:
+      - main  # Proper spacing
 
 jobs:
-  buildjob:
-    runs-on: ubuntu-latest
+  my_first_job:  # Job name (lowercase is recommended)
+    runs-on: ubuntu-latest  # Define the OS
+
     steps:
-      - name: Clone the current repository on the runner
-        uses: actions/checkout@v4
+      - name: Checkout Code  # Step 1: Fetch the repository
+        uses: actions/checkout@v4  
 
-      - name: Setup Java 17 and Maven 
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-          cache: 'maven'
-
-      - name: Review the code using SonarCloud
-        run: |
-          export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          export SONAR_TOKEN=${{ secrets.SONAR_TOKEN }}
-          mvn -B verify sonar:sonar \
-            -Dsonar.projectKey=mukeshkumar845_Learing \
-            -Dsonar.organization=mukeshkumar845 \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.token=$SONAR_TOKEN
-
+      - name: Print a Message  # Step 2: Print a message
+        run: echo "Hi, this is my first job!"
