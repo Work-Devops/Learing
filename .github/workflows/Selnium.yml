@@ -1,0 +1,33 @@
+name: Run Selenium Tests
+
+on:
+  repository_dispatch:
+    types: [frontend-updated]
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Selenium Repo
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v8
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Run Selenium Tests
+        run: mvn test  # Adjust based on your framework
+
+      - name: Notify Frontend Repo (Success)
+        if: success()
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.TESTING_REPORT }}" \
+               -H "Accept: application/vnd.github.v3+json" \
+              https://github.com/Work-Devops/java-reachability-playground\
+               -d '{"event_type": "tests-passed"}'
+
+      - name: Send Failure Notification
+        if: failure()
+        run: echo "Selenium tests failed! Deployment will not proceed."
