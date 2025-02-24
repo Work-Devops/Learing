@@ -1,0 +1,13 @@
+name: Using Secrets Exampl
+
+on: [push]
+
+jobs:
+   secret_tests:
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Use Secret in a Command
+        run: echo "this is the value ${{TESTING_REPORT}}"
