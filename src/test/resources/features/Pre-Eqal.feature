@@ -12,3 +12,7 @@ Feature: User login and application process
     Then The user submits the application successfully
     Then user added the loan Application
     Then check it is working or not
+        Then check it is working or not
+            Then check it is working or not
+                Then check it is working or not    Then check it is working or not
+                
