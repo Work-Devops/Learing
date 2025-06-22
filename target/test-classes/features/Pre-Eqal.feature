@@ -10,3 +10,5 @@ Feature: User login and application process
     And The user enters valid borrower details
     And The user enters valid co-borrower details
     Then The user submits the application successfully
+    Then user added the loan Application
+    Then check it is working or not
